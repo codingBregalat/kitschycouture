@@ -7,24 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
 
     <main>
         <section id="home">
             <div class="hero">
-                <img src="Frontpage2222.jpg" alt="A descriptive text about the image">
-                <div class="hero-text">
-                    <h1>Welcome to My Website</h1>
-                    <p>This is a basic website created with HTML and CSS.</p>
-                </div>
+                <video class="desktop-video" autoplay muted loop>
+                    <source src="Shoppagewide.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video class="mobile-video" autoplay muted loop>
+                    <source src="Shoppagemobile.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <a href="shop.html" class="hero-link"></a>
             </div>
         </section>
 
@@ -42,5 +38,10 @@
     <footer>
         <p>&copy; kitschycouture</p>
     </footer>
+
+    <audio id="background-music" autoplay loop>
+        <source src="salamisound-3793245-meeresrauschen-leichte.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
 </body>
 </html>
