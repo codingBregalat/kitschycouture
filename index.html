@@ -24,6 +24,15 @@
             </div>
         </section>
 
+        <section id="about">
+            <h2>About</h2>
+            <p>This section contains information about the website.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can contact us at <a href="mailto:info@example.com">info@example.com</a>.</p>
+        </section>
     </main>
 
     <footer>
@@ -34,5 +43,16 @@
         <source src="salamisound-3793245-meeresrauschen-leichte.mp3" type="audio/mp3">
         Your browser does not support the audio tag.
     </audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mobileVideo = document.querySelector('.mobile-video');
+            mobileVideo.play().then(() => {
+                console.log("Mobile video is playing");
+            }).catch(error => {
+                console.log("Mobile video play failed", error);
+            });
+        });
+    </script>
 </body>
 </html>
