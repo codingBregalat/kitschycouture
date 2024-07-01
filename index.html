@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitschy Couture</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon-32x32.png" type="image/png">
+</head>
+<body>
+    <header></header>
 
+    <main>
+        <section id="home">
+            <div class="hero">
+                <video id="desktopVideo" class="desktop-video" autoplay muted loop>
+                    <source src="Shoppagewide.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video id="mobileVideo" class="mobile-video" muted loop>
+                    <source src="Shoppagemobile.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img id="shopText" class="shop-text" src="shopText.png" alt="Shop Text" onclick="playMobileVideo()">
+                <img id="playButton" class="mobile-video-btn" src="PlayButton.png" alt="Play Video" onclick="playMobileVideo()">
+                <a id="shopLink" href="shop.html" class="hero-link"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> kitschycouture | <a href="about.html">About</a> | <a href="imprint.html">Imprint</a></p>
+    </footer>
+
+    <audio id="background-music" autoplay loop>
+        <source src="salamisound-3793245-meeresrauschen-leichte.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <script>
+        function playMobileVideo() {
+            const mobileVideo = document.getElementById('mobileVideo');
+            const playButton = document.getElementById('playButton');
+            const shopText = document.getElementById('shopText');
+            const shopLink = document.getElementById('shopLink');
+            
+            mobileVideo.play().then(() => {
+                playButton.style.display = 'none';
+                shopText.style.display = 'none';
+                shopLink.style.display = 'block';  // Show the shop link after video starts
+                shopLink.style.pointerEvents = 'auto';  // Enable the shop link after video starts
+                
+                // Set a timeout to open the shop page after 6 seconds
+                setTimeout(() => {
+                    window.location.href = 'shop.html';
+                }, 8000);  // 8000 milliseconds = 8 seconds
+
+            }).catch(error => {
+                console.error("Error playing video: ", error);
+            });
+            
+            // Temporarily disable the shop link while playing the video
+            shopLink.style.pointerEvents = 'none';
+        }
+    </script>
+</body>
+</html>
