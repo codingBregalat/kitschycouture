@@ -14,8 +14,7 @@ html, body {
     flex-direction: column; /* Use flexbox for layout */
     font-family: 'Playfair Display', serif; /* Apply Playfair Display font */
     line-height: 1.6;
-    background: url('bufferImage-min.png') no-repeat center center fixed; /* Add your background image here */
-    background-size: cover; /* Make sure the background covers the whole viewport */
+    background-color: #f7abda;
     color: #121212;
 }
 
