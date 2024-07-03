@@ -34,7 +34,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 0px; /* Adjust height as needed */
+    height: auto; /* Adjust height as needed */
 }
 
 .header-container {
@@ -45,7 +45,8 @@ header {
 }
 
 .header-logo {
-    width: 450px; /* Adjust the width as needed */
+    width: 100%;
+    max-width: 450px; /* Adjust the max-width as needed */
     height: auto; /* Maintain aspect ratio */
     margin-top: 0px; /* Optional: Adjust margin top for spacing */
 }
