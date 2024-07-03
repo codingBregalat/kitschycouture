@@ -17,7 +17,7 @@
                     <source src="Shoppagewide.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <video id="mobileVideo" class="mobile-video" muted loop>
+                <video id="mobileVideo" class="mobile-video" muted>
                     <source src="Shoppagemobile.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -50,11 +50,10 @@
                 shopLink.style.display = 'block';  // Show the shop link after video starts
                 shopLink.style.pointerEvents = 'auto';  // Enable the shop link after video starts
                 
-                // Set a timeout to open the shop page after 6 seconds
-                setTimeout(() => {
+                // Add event listener for when the video ends
+                mobileVideo.addEventListener('ended', () => {
                     window.location.href = 'shop.html';
-                }, 8000);  // 8000 milliseconds = 8 seconds
-
+                });
             }).catch(error => {
                 console.error("Error playing video: ", error);
             });
