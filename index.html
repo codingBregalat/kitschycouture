@@ -19,6 +19,10 @@
             cursor: pointer;
         }
 
+        .preload-image {
+            display: none;
+        }
+
         @media screen and (max-width: 768px) {
             .desktop-video {
                 display: none;
@@ -31,6 +35,17 @@
             .shop-text {
                 display: block;
                 cursor: pointer;
+            }
+
+            .preload-image {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                z-index: 1;
             }
         }
     </style>
@@ -49,6 +64,7 @@
                     <source src="KitschyMobile2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <img id="preloadImage" class="preload-image" src="Preloadimage.png" alt="Preload Image">
                 <img id="shopText" class="shop-text" src="shopText.png" alt="Shop Text" onclick="playMobileVideo()">
                 <img id="playButton" class="mobile-video-btn" src="PlayButton.png" alt="Play Video" onclick="playMobileVideo()">
                 <a id="shopLink" href="shop.html" class="hero-link"></a>
@@ -67,10 +83,12 @@
             const playButton = document.getElementById('playButton');
             const shopText = document.getElementById('shopText');
             const shopLink = document.getElementById('shopLink');
-            
+            const preloadImage = document.getElementById('preloadImage');
+
             mobileVideo.play();
             playButton.style.display = 'none';
             shopText.style.display = 'none';
+            preloadImage.style.display = 'none';
             shopLink.style.display = 'block';
 
             // Add event listener for when the video ends
