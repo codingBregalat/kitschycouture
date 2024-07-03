@@ -176,7 +176,7 @@ footer {
 
     /* Add background image for mobile */
     .hero {
-        background-image: url('KitschyBeach16-min.png');
+        background-image: url('KitschyBeachMobile.jpg');
         background-size: cover;
         background-position: center;
     }
