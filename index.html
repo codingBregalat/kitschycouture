@@ -6,6 +6,34 @@
     <title>Kitschy Couture</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <style>
+        .hero {
+            position: relative;
+        }
+
+        .mobile-video {
+            display: none;
+        }
+
+        .mobile-video-btn {
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .desktop-video {
+                display: none;
+            }
+
+            .mobile-video {
+                display: block;
+            }
+
+            .shop-text {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    </style>
 </head>
 <body>
     <header></header>
@@ -17,7 +45,7 @@
                     <source src="Shoppagewide.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <video id="mobileVideo" class="mobile-video" muted>
+                <video id="mobileVideo" class="mobile-video">
                     <source src="Shoppagemobile.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -37,6 +65,7 @@
         Your browser does not support the audio tag.
     </audio>
 
+    <!-- Inline Script for Playing Video -->
     <script>
         function playMobileVideo() {
             const mobileVideo = document.getElementById('mobileVideo');
@@ -44,22 +73,10 @@
             const shopText = document.getElementById('shopText');
             const shopLink = document.getElementById('shopLink');
             
-            mobileVideo.play().then(() => {
-                playButton.style.display = 'none';
-                shopText.style.display = 'none';
-                shopLink.style.display = 'block';  // Show the shop link after video starts
-                shopLink.style.pointerEvents = 'auto';  // Enable the shop link after video starts
-                
-                // Add event listener for when the video ends
-                mobileVideo.addEventListener('ended', () => {
-                    window.location.href = 'shop.html';
-                });
-            }).catch(error => {
-                console.error("Error playing video: ", error);
-            });
-            
-            // Temporarily disable the shop link while playing the video
-            shopLink.style.pointerEvents = 'none';
+            mobileVideo.play();
+            playButton.style.display = 'none';
+            shopText.style.display = 'none';
+            shopLink.style.display = 'block';
         }
     </script>
 </body>
