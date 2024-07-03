@@ -22,7 +22,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <!-- Mobile Video -->
-                <video id="mobileVideo" class="mobile-video" playsinline webkit-playsinline preload="auto">
+                <video id="mobileVideo" class="mobile-video" playsinline webkit-playsinline preload="metadata">
                     <source src="KitschyMobile2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -56,17 +56,10 @@
             mobileVideo.play();
 
             // Redirect to shop page after video ends
-            mobileVideo.onended = function() {
+            mobileVideo.addEventListener('ended', function() {
                 // Redirect to shop page
                 window.location.replace('shop.html');
-            };
-
-            // Alternatively, you can use oncanplaythrough event to redirect
-            // once the video is fully loaded and ready to play
-            mobileVideo.oncanplaythrough = function() {
-                // Redirect to shop page
-                window.location.replace('shop.html');
-            };
+            });
         }
     </script>
 </body>
