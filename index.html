@@ -17,10 +17,13 @@
 
         .mobile-video-btn {
             cursor: pointer;
-        }
-
-        .preload-image {
-            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px; /* Set appropriate width for the button */
+            height: 120px; /* Set appropriate height for the button */
+            z-index: 2; /* Ensure it is above the video */
         }
 
         @media screen and (max-width: 768px) {
@@ -37,15 +40,16 @@
                 cursor: pointer;
             }
 
-            .preload-image {
+            .mobile-video-btn {
                 display: block;
                 position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                object-fit: cover;
-                z-index: 1;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 120px; /* Set appropriate width for the button */
+                height: 120px; /* Set appropriate height for the button */
+                cursor: pointer;
+                z-index: 2; /* Ensure it is above the video */
             }
         }
     </style>
@@ -64,9 +68,8 @@
                     <source src="KitschyMobile2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <img id="preloadImage" class="preload-image" src="Preloadimage.png" alt="Preload Image">
-                <img id="shopText" class="shop-text" src="shopText.png" alt="Shop Text" onclick="playMobileVideo()">
-                <img id="playButton" class="mobile-video-btn" src="PlayButton.png" alt="Play Video" onclick="playMobileVideo()">
+                
+                <img id="playButton" class="mobile-video-btn" src="PlayButtonShop.png" alt="Play Video" onclick="playMobileVideo()">
                 <a id="shopLink" href="shop.html" class="hero-link"></a>
             </div>
         </section>
@@ -83,12 +86,10 @@
             const playButton = document.getElementById('playButton');
             const shopText = document.getElementById('shopText');
             const shopLink = document.getElementById('shopLink');
-            const preloadImage = document.getElementById('preloadImage');
 
             mobileVideo.play();
             playButton.style.display = 'none';
             shopText.style.display = 'none';
-            preloadImage.style.display = 'none';
             shopLink.style.display = 'block';
 
             // Add event listener for when the video ends
