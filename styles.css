@@ -173,4 +173,11 @@ footer {
     .hero-link {
         display: none; /* Hide the shop link initially */
     }
+
+    /* Add background image for mobile */
+    .hero {
+        background-image: url('KitschyBeach16-min.png');
+        background-size: cover;
+        background-position: center;
+    }
 }
