@@ -14,7 +14,8 @@ html, body {
     flex-direction: column; /* Use flexbox for layout */
     font-family: 'Playfair Display', serif; /* Apply Playfair Display font */
     line-height: 1.6;
-    background-color: #f7abda;
+    background: url('bufferImage-min.png') no-repeat center center fixed; /* Add your background image here */
+    background-size: cover; /* Make sure the background covers the whole viewport */
     color: #121212;
 }
 
@@ -172,16 +173,5 @@ footer {
 
     .hero-link {
         display: none; /* Hide the shop link initially */
-    }
-
-    .preload-image {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        z-index: 1;
     }
 }
