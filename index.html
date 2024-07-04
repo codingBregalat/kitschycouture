@@ -25,16 +25,22 @@
     <main>
         <section id="home">
             <div class="hero">
+                <!-- Desktop Video -->
                 <video id="desktopVideo" class="desktop-video" autoplay muted loop preload="auto">
                     <source src="Shoppagewide.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                
+                <!-- Mobile Video -->
                 <video id="mobileVideo" class="mobile-video" muted autoplay playsinline webkit-playsinline preload="auto" controlsList="nodownload">
                     <source src="KitschyMobile2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <img id="shopText" class="shop-text" src="shopTextsmall.png" alt="Shop Text" onclick="playMobileVideo()">
-                <img id="playButton" class="mobile-video-btn" src="PlayButtonsmall.png" alt="Play Video" onclick="playMobileVideo()">
+                
+                <!-- Shop Text (Shown on mobile) -->
+                <img id="shopText" class="shop-text" src="ShopButton.png" alt="Shop Text" onclick="playMobileVideo()">
+                
+                <!-- Shop Link (Hidden initially, shown after video ends) -->
                 <a id="shopLink" href="shop.html" class="hero-link"></a>
             </div>
         </section>
