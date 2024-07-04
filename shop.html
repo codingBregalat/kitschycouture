@@ -24,14 +24,14 @@
             padding-bottom: 30px;
         }
 
-      .slideshow-container {
-          position: relative;
-          width: 90%; /* Set width to 80% of its parent element */
-             max-width: 400px; /* Set a maximum width */
-          margin: auto;
-          overflow: hidden;
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            width: 100%; /* Default width */
+            max-width: 400px; /* Set a maximum width */
+            margin: auto;
+            overflow: hidden;
         }
-
 
         .mySlides {
             display: none;
@@ -111,6 +111,24 @@
             justify-content: center;
             margin-top: 20px;
         }
+
+        @media only screen and (max-width: 600px) {
+            /* Adjustments for mobile devices */
+            .slideshow-container {
+                width: 90%; /* Adjust width for small screens */
+            }
+
+            .prev, .next {
+                font-size: 14px; /* Reduce the font size of the navigation arrows */
+                padding: 12px; /* Adjust padding for mobile */
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1200px) {
+            .slideshow-container {
+                width: 70%; /* Adjust width for medium screens */
+            }
+        }
     </style>
 </head>
 <body class="shop-page">
@@ -158,7 +176,7 @@
     </footer>
 
     <!-- Ensure the Ecwid script is properly included -->
-    <script data-cfasync="false" type="text/javascript" src="h@ttps://app.ecwid.com/script.js?105709787&data_platform=singleproduct_v2" charset="utf-8"></script>
+    <script data-cfasync="false" type="text/javascript" src="https://app.ecwi.com/script.js?105709787&data_platform=singleproduct_v2" charset="utf-8"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             xProduct();
