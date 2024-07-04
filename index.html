@@ -32,13 +32,13 @@
                 </video>
                 
                 <!-- Mobile Video -->
-                <video id="mobileVideo" class="mobile-video" muted autoplay playsinline webkit-playsinline preload="auto" controlsList="nodownload">
+                <video id="mobileVideo" class="mobile-video" muted playsinline webkit-playsinline preload="auto" controlsList="nodownload">
                     <source src="KitschyMobile2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 
                 <!-- Shop Text (Shown on mobile) -->
-                <img id="shopText" class="shop-text" src="ShopButton.png" alt="Shop Text" onclick="playMobileVideo()">
+                <img id="shopText" class="shop-text" src="ShopButton.png" alt="Shop Text">
                 
                 <!-- Shop Link (Hidden initially, shown after video ends) -->
                 <a id="shopLink" href="shop.html" class="hero-link"></a>
@@ -50,24 +50,33 @@
         <p> kitschycouture | <a href="about.html">About</a> | <a href="imprint.html">Imprint</a></p>
     </footer>
 
-    <!-- Inline Script for Playing Video -->
+    <!-- Script for Playing Video and Managing Button Visibility -->
     <script>
-        function playMobileVideo() {
+        document.addEventListener('DOMContentLoaded', function() {
             const mobileVideo = document.getElementById('mobileVideo');
-            const playButton = document.getElementById('playButton');
             const shopText = document.getElementById('shopText');
             const shopLink = document.getElementById('shopLink');
-            
-            mobileVideo.play();
-            playButton.style.display = 'none';
-            shopText.style.display = 'none';
-            shopLink.style.display = 'block';
 
-            // Add event listener for when the video ends
-            mobileVideo.onended = function() {
-                window.location.href = 'shop.html';
-            };
-        }
+            // Add event listener to shop text button
+            shopText.addEventListener('click', function() {
+                // Play the video
+                mobileVideo.play();
+
+                // Hide shop text button and show shop link
+                shopText.style.display = 'none';
+                shopLink.style.display = 'block';
+
+                // Hide shopText after video starts playing
+                mobileVideo.onplay = function() {
+                    shopText.style.display = 'none';
+                };
+
+                // Redirect to shop.html after video ends
+                mobileVideo.onended = function() {
+                    window.location.href = 'shop.html';
+                };
+            });
+        });
     </script>
 </body>
 </html>
