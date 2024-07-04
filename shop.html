@@ -27,14 +27,15 @@
         /* Slideshow styles */
         .slideshow-container {
             position: relative;
-            max-width: 400px; /* Adjust the width of the slideshow */
+            width: 90%; /* Set the width to 100% for responsiveness */
+            max-width: 400px; /* Set a maximum width */
             margin: auto;
             overflow: hidden;
         }
 
         .mySlides {
             display: none;
-            width: 100%;
+            width: 100%; /* Ensure slides take up full width of the container */
         }
 
         .slideshow-container img {
@@ -52,7 +53,7 @@
             height: 15px;
             width: 15px;
             margin: 0 2px;
-            background-color:#6edbff;
+            background-color: #6edbff;
             border-radius: 50%;
             display: inline-block;
             transition: background-color 0.6s ease;
@@ -60,7 +61,7 @@
         }
 
         .active {
-            background-color:#6edbff8b;
+            background-color: #6edbff8b;
         }
 
         .fade {
@@ -110,12 +111,25 @@
             justify-content: center;
             margin-top: 20px;
         }
+
+        @media only screen and (max-width: 600px) {
+            /* Adjustments for mobile devices */
+            .slideshow-container {
+                max-width: 100%; /* Remove the maximum width for mobile */
+                padding: 0 10px; /* Add padding to prevent the slideshow from touching the edges */
+            }
+
+            .prev, .next {
+                font-size: 14px; /* Reduce the font size of the navigation arrows */
+                padding: 12px; /* Adjust padding for mobile */
+            }
+        }
     </style>
 </head>
 <body class="shop-page">
     <header>
         <a href="index.html">
-            <img src="artificial paradise-min.png" alt="Shop Logo" class="header-logo">
+            <img src="artificial paradisesmall.png" alt="Shop Logo" class="header-logo">
         </a>
     </header>
     
@@ -123,7 +137,7 @@
         <!-- Slideshow container -->
         <div class="slideshow-container">
             <div class="mySlides fade">
-                <img src="CommingSoon.jpg" alt="Image 1">
+                <img src="CommingSoon2.jpg" alt="Image 1">
             </div>
             <div class="mySlides fade">
                 <img src="" alt="Image 2">
@@ -157,7 +171,7 @@
     </footer>
 
     <!-- Ensure the Ecwid script is properly included -->
-    <script data-cfasync="false" type="text/javascript" src="h@ttps://app.ecwid.com/script.js?105709787&data_platform=singleproduct_v2" charset="utf-8"></script>
+    <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?105709787&data_platform=singleproduct_v2" charset="utf-8"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             xProduct();
