@@ -81,9 +81,6 @@ header {
     height: 100px;
     display: block;
     text-decoration: none;
-}
-
-.hero-link {
     display: block;
     width: 200px;
     height: 100px;
@@ -163,10 +160,10 @@ footer {
     .shop-text {
         display: block;
         position: absolute;
-        bottom: 200px; /* Adjust this value to move the image up or down */
-        left: 50%; /* Adjust this value to move the image horizontally */
-        transform: translateX(-50%); /* Center the image horizontally */
-        width: 150px; /* Set appropriate width for the image */
+        top: 50%; /* Position at the vertical center */
+        left: 50%; /* Position at the horizontal center */
+        transform: translate(-50%, -50%); /* Center the image */
+        width: 150px; /* Adjust width as needed */
         height: auto; /* Maintain aspect ratio */
         z-index: 3; /* Ensure it is above the play button */
     }
