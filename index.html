@@ -3,94 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitschy Couture</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon-32x32.png" type="image/png">
+    <title>Imprint</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Common styles */
-        video::-webkit-media-controls {
-            display: none !important;
+        body {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center; /* Center the text */
         }
-        video::-webkit-media-controls-enclosure {
-            display: none !important;
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            font-style: italic;
         }
-        video::-webkit-media-controls-play-button {
-            display: none !important;
+        h2 {
+            margin-top: 1.5em;
+            font-style: italic;
         }
-
-        /* Style for shopText */
-        #shopText {
-            display: none; /* Hide by default */
-            width: 280px; /* Adjust size accordingly */
-            height: auto; /* Maintain aspect ratio */
+        p {
+            margin-bottom: 1.5em;
+            font-style: italic;
         }
-
-        /* Media query to show shopText on small screens (mobile) */
-        @media (max-width: 768px) {
-            #shopText {
-                display: block; /* Show on small screens */
-            }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+        .contact-info a {
+            text-decoration: none; /* Optional: remove underline from links */
+            color: inherit; /* Optional: inherit the current text color */
         }
     </style>
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1>Imprint</h1>
+    </header>
 
     <main>
-        <section id="home">
-            <div class="hero">
-                <!-- Desktop Video -->
-                <video id="desktopVideo" class="desktop-video" autoplay muted loop preload="auto">
-                    <source src="Shoppagewide.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                
-                <!-- Mobile Video -->
-                <video id="mobileVideo" class="mobile-video" autoplay muted playsinline webkit-playsinline preload="auto" controlsList="nodownload">
-                    <source src="KitschyMobile2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                
-                <!-- Shop Text (Shown on mobile) -->
-                <img id="shopText" class="shop-text" src="ShopButton.png" alt="Shop Text">
-                
-                <!-- Shop Link (Hidden initially, shown after video ends) -->
-                <a id="shopLink" href="shop.html" class="hero-link"></a>
-            </div>
+        <section>
+            <h2>DISCLOSURES ACCORDING TO § 5 TM</h2>
+            <p>Kitschy Couture<br>
+            Östliche Karl-Friedrich-Str. 7<br>
+            75175 Pforzheim</p>
+            <p>Represented by:<br>
+            Abarna Kugathasan</p>
+        </section>
+
+        <section>
+            <h2>CONTACT</h2>
+            <p class="contact-info">Phone: +49 1522 9189895<br>
+            e-mail: <a href="info@kitschycouture.store">info@kitschycouture.store</a></p>
+        </section>
+
+    
+
+        <section>
+            <h2>EDITORIAL RESPONSIBILITY</h2>
+            <p>Kitschy Couture<br>
+            Östliche Karl-Friedrich-Str. 7<br>
+            75175 Pforzheim</p>
+        </section>
+
+        <section>
+            <h2>EU DISPUTE RESOLUTION</h2>
+            <p>The European Commission provides a platform for online dispute resolution (OS):<br>
+            <a href="https://ec.europa.eu/consumers/odr/">https://ec.europa.eu/consumers/odr/</a>.<br>
+            You can find our e-mail address in the imprint above.</p>
+        </section>
+
+        <section>
+            <h3>Tax Number</h3> 
+            48259/20117
+        </section>
+ 
+
+        <section>
+            <h2>CONSUMER DISPUTE RESOLUTION/UNIVERSAL ARBITRATION BOARD</h2>
+            <p>We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
         </section>
     </main>
 
     <footer>
-        <p> kitschycouture | <a href="about.html">About</a> | <a href="imprint.html">Imprint</a></p>
+        <p> 2024 Kitschy Couture</p>
     </footer>
-
-    <!-- Script for Playing Video and Managing Button Visibility -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileVideo = document.getElementById('mobileVideo');
-            const shopText = document.getElementById('shopText');
-            const shopLink = document.getElementById('shopLink');
-
-            // Add event listener to shop text button
-            shopText.addEventListener('click', function() {
-                // Play the video
-                mobileVideo.play();
-
-                // Hide shop text button and show shop link
-                shopText.style.display = 'none';
-                shopLink.style.display = 'block';
-
-                // Hide shopText after video starts playing
-                mobileVideo.onplay = function() {
-                    shopText.style.display = 'none';
-                };
-
-                // Redirect to shop.html after video ends
-                mobileVideo.onended = function() {
-                    window.location.href = 'shop.html';
-                };
-            });
-        });
-    </script>
 </body>
 </html>
