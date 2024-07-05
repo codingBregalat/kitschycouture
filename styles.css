@@ -133,8 +133,16 @@ footer {
 }
 
 .shop-text {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Adjust width as desired */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 3;
 }
+
 
 @media (max-width: 768px) {
     .desktop-video {
@@ -151,8 +159,8 @@ footer {
         bottom: 90px; /* Position the button at the bottom of the screen */
         left: 50%;
         transform: translateX(-50%);
-        width: 120px; /* Set appropriate width for the image */
-        height: 120px; /* Set appropriate height for the image */
+        width: 40px; /* Set appropriate width for the image */
+        height: 40px; /* Set appropriate height for the image */
         cursor: pointer;
         z-index: 2; /* Ensure it is above the video */
     }
