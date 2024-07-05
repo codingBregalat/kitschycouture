@@ -24,10 +24,9 @@
             padding-bottom: 30px;
         }
 
-        /* Slideshow styles */
         .slideshow-container {
             position: relative;
-            width: 100%; /* Default width */
+            width: 90%; /* Set width to 80% of its parent element */
             max-width: 400px; /* Set a maximum width */
             margin: auto;
             overflow: hidden;
@@ -112,21 +111,25 @@
             margin-top: 20px;
         }
 
-        @media only screen and (max-width: 600px) {
-            /* Adjustments for mobile devices */
-            .slideshow-container {
-                width: 90%; /* Adjust width for small screens */
-            }
-
-            .prev, .next {
-                font-size: 14px; /* Reduce the font size of the navigation arrows */
-                padding: 12px; /* Adjust padding for mobile */
-            }
+        /* Countdown timer styles */
+        .countdown-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 24px;
+            color: #ffffff; /* Adjust the color as needed */
+            background-color: #f7abda; /* Background color with opacity */
+            padding: 10px 20px;
+            border-radius: 10px;
         }
 
-        @media (min-width: 601px) and (max-width: 1200px) {
-            .slideshow-container {
-                width: 70%; /* Adjust width for medium screens */
+        /* Responsive countdown text */
+        @media (max-width: 768px) {
+            .countdown-container {
+                font-size: 18px;
+                padding: 8px 16px;
             }
         }
     </style>
@@ -141,10 +144,19 @@
     <main>
         <!-- Slideshow container -->
         <div class="slideshow-container">
+            <!-- Countdown Timer -->
+            <div class="countdown-container" id="countdown">
+            coming in : <br> <span id="timer"></span>
+            </div>
             <div class="mySlides fade">
                 <img src="CommingSoon.jpg" alt="Image 1">
             </div>
-            
+            <div class="mySlides fade">
+                <img src="" alt="Image 2">
+            </div>
+            <div class="mySlides fade">
+                <img src="" alt="Image 3">
+            </div>
             <!-- Navigation arrows -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -171,7 +183,7 @@
     </footer>
 
     <!-- Ensure the Ecwid script is properly included -->
-    <script data-cfasync="false" type="text/javascript" src="https://app.ecwd.com/script.js?105709787&data_platform=singleproduct_v2" charset="utf-8"></script>
+    <script data-cfasync="false" type="text/javascript" src="htps://app.ecwid.com/script.js?105709787&data_platform=singleproduct_v2" charset="utf-8"></script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             xProduct();
@@ -220,6 +232,35 @@
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active";
         }
+
+        // Countdown Timer JavaScript
+        function startCountdown(endtime) {
+            const timer = document.getElementById('timer');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = endtime - now;
+
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                timer.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    timer.innerHTML = "EXPIRED";
+                }
+            }
+
+            updateCountdown(); // Run function once at first to avoid delay
+            const countdownInterval = setInterval(updateCountdown, 1000);
+        }
+
+        const today8PM = new Date();
+        today8PM.setHours(20, 0, 0, 0);
+
+        startCountdown(today8PM);
     </script>
 </body>
 </html>
